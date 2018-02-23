@@ -40,17 +40,24 @@ function viewCart() {
 }
 
 function total() {
-  for (i = 0; i < cart.length; i++) {
+  var prices = []
+  for (var i = 0; i < cart.length; i++) {
     var objectKey = Object.keys(cart[i])[0];
     var objectValue = cart[i][objectKey];
-    sum += objectKey;
+    prices.push(objectValue)
   }
-  return sum
+  const sumPrices = prices.reduce((a,b) => a+b)
+  return sumPrices
 }
 
 function removeFromCart(item) {
-  
-
+  for (var i = 0; i < cart.length; i++) { // loop
+    if (cart[i].hasOwnProperty(item)) {
+      cart.splice(i,1);
+      return cart
+    }
+  }
+  console.log(`That item is not in your cart.`);
 }
 
 function placeOrder(cardNumber) {
