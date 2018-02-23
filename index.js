@@ -61,6 +61,8 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
+  const cartTotal = total();
+  const cardNumber = Math.floor(Math.random)
   if (cardNumber !== null) {
     console.log(`Sorry, we don't have a credit card on file for you.`)
   } else {
