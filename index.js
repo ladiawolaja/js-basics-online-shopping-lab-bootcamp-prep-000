@@ -46,7 +46,7 @@ function total() {
     var objectValue = cart[i][objectKey];
     prices.push(objectValue)
   }
-  const sumPrices = prices.reduce((a,b) => a+b)
+  var sumPrices = prices.reduce((a,b) => a+b)
   return sumPrices
 }
 
